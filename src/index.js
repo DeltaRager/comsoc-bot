@@ -13,7 +13,8 @@ client.once('ready', () => {
 });
 
 client.on('messageCreate', message => {
-    console.log(message)
+    console.log(message.channel.type)
+    console.log(message.content)
 })
 
 client.login(process.env.TOKEN)
