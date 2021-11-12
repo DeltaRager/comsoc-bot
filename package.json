@@ -1,6 +1,9 @@
 {
   "requires": true,
   "lockfileVersion": 1,
+  "engines": {
+    "node": "14.18.0"
+  },
   "dependencies": {
     "@discordjs/builders": {
       "version": "0.8.2",
