@@ -6,15 +6,16 @@ const client = new Client({
 
 const prefix = '$'
 
+const eventFiles = fs.readdirSync('./events').filter(file => file.endsWith('.js'));
 //require('./modules/RegisterMember')
 
-client.once('ready', () => {
-	console.log('Bot is up');
-});
-
-client.on('messageCreate', message => {
-    console.log(message.channel.type)
-    console.log(message.content)
-})
+for (const file of eventFiles) {
+	const event = require(`./events/${file}`);
+	if (event.once) {
+		client.once(event.name, (...args) => event.execute(...args));
+	} else {
+		client.on(event.name, (...args) => event.execute(...args));
+	}
+}
 
 client.login(process.env.TOKEN)
