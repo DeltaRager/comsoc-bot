@@ -8,7 +8,7 @@ const client = new Client({
 
 const prefix = '$'
 
-const eventFiles = fs.readdirSync('./events').filter(file => file.endsWith('.js'));
+const eventFiles = fs.readdirSync('./src/events').filter(file => file.endsWith('.js'));
 //require('./modules/RegisterMember')
 
 for (const file of eventFiles) {
