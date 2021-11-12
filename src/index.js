@@ -9,8 +9,12 @@ client.once('ready', () => {
 	console.log('Bot is up');
 });
 
-client.on('messageCreate', message => {
+client.on('mess', message => {
     console.log(message.channel.type)
+})
+
+client.on('messageCreate', message => {
+    console.log(message)
 })
 
 client.login(process.env.TOKEN)
