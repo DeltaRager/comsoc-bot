@@ -21,4 +21,4 @@ for (const file of eventFiles) {
 	}
 }
 
-client.login('NTE1MDA0OTAwMTUzNzUzNjIx.W_YhsA.RvcMANwI2t0Hm6NREq-ObbmKJCM')
+client.login(process.env.TOKEN)
