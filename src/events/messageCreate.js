@@ -4,6 +4,12 @@ const modules = fs.readdirSync('./src/commands').filter(file => file.endsWith('.
 module.exports = {
     name: 'messageCreate',
     execute(message, prefix, client) {
+        if(message.channel.id === process.env.listeningChannelId)
+        {
+            var announceChannel = client.channels.cache.get(process.env.announcementChannelId)
+            announceChannel.send(message.content)
+            return
+        }
         const contents = message.content.split(prefix)[1]
         if(contents)
         {
@@ -13,7 +19,6 @@ module.exports = {
             if(modules.find(cmd => cmd === command)){
                 const cmdcall = require(`../commands/${command}`)
                 cmdcall.execute(message, args, client)
-                
             }
         }
     }
