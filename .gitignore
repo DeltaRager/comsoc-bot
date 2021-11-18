@@ -2,3 +2,4 @@ data
 bot.py
 requirements.txt
 node_modules
+src/constants
