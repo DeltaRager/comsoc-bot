@@ -4,7 +4,7 @@ module.exports = {
     name: 'ready',
     once: true,
     execute(client) {
-        await mongoose.connect(
+        mongoose.connect(
             process.env.MDBSRV,
             {
                 keepAlive: true

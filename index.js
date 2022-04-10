@@ -17,8 +17,8 @@ for (const file of eventFiles) {
 	if (event.once) {
 		client.once(event.name,async (...args) => event.execute(...args));
 	} else {
-		client.on(event.name, async (...args) => event.execute(...args, prefix, client));
+		client.on(event.name,async (...args) => event.execute(...args, prefix, client));
 	}
 }
-
+console.log("Does this run?")
 client.login(process.env.TOKEN)
