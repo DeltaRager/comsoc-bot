@@ -7,7 +7,7 @@ module.exports = {
     execute(message, prefix, client) {
         if(message.channel.id === process.env.listeningChannelId)
         {
-            await new schema({
+            new schema({
                 Author: message.Author.username,
                 Message: message.content,
                 Timestamp: message.createdAt
