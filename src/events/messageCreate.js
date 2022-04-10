@@ -1,5 +1,4 @@
 const fs = require('fs');
-const modules = fs.readdirSync('./src/commands').filter(file => file.endsWith('.js'));
 const schema = require('../constants/mongoSchema')
 
 module.exports = {
